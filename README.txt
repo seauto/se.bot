@@ -4,8 +4,10 @@
 #
 #	se.auto-bot
 #
-#	research project to demonstrate how to automatically manage
-#	craigsList posting, esp flagging posts violating CL Terms of use
+#	research project to demonstrate how to automatically manage craigsList posting
+#	- automatically post new ads
+#	- automatically renew ads
+#	- automatically flag other folks' (duplicate) posts in blatant abuse of CL Terms of Use
 #
 #
 # Original
@@ -73,7 +75,7 @@
 #	http://www.craigslist.org/about/bulk_posting_interface
 #
 # =========================================================================
-# se.bot is tentatively released under CreativeCommons4.0 by-nc-nd license
+# se.bot is tentatively released under CreativeCommons-4.0 by-nc-nd license
 # =========================================================================
 #
 #	https://CreativeCommons.org/licenses
