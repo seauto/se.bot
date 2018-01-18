@@ -1,0 +1,6 @@
+#
+#
+# https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode
+#
+#	mv legalcode se.cc-license.by-nc-nd.legalcode.html
+#
