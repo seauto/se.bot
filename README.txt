@@ -18,10 +18,13 @@
 #
 # se.auto-bot Requirements
 # ------------------------
-#	se.auto-bot.Install-HOWTO.txt	== Intall-HOWTO.txt
+#	se.auto-bot.Install-HOWTO.txt	== Install-HOWTO.txt
 #
 #		pypi.python.org/pypi/pip	# Install pip == Python Installer 
+#			wget https://bootstrap.pypa.io/get-pip.py	# Download pip
+#			python get-pip.py				# Install pip
 #
+#		pip install -U pip		# update pip
 #		pip install selenium
 #		pip install pyvirtualdisplay
 #		pip install spintax ?
