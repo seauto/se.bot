@@ -2,6 +2,16 @@
 #
 # se.auto-bot.README.txt		== README.txt
 #
+#	se.auto-bot
+#
+#	research project to demonstrate how to automatically manage
+#	craigsList posting, esp flagging posts violating CL Terms of use
+#
+#
+# Original
+# --------
+#	GitHub.com/seauto
+#
 #
 # 18-Jan-18 amo Date-of-Birth
 #
@@ -10,10 +20,21 @@
 # ------------------------
 #	se.auto-bot.Install-HOWTO.txt	== Intall-HOWTO.txt
 #
-#	- Selenium
-#	- Browser Driver
+#		pypi.python.org/pypi/pip	# Install pip == Python Installer 
 #
-#	- Your CraigsList login credentials ( email and password ) is required for CraigsList management
+#		pip install selenium
+#		pip install pyvirtualdisplay
+#		pip install spintax ?
+#
+#	- python --version	# 2.7.13+	# Python-3.x is incompatible with Python-2.x syntax
+#
+#	- Selenium		# http://www.seleniumhq.org/download
+#
+#	- Browser Driver 	# https://chromedriver.storage.googleapis.com/2.34/chromedriver_linux64.zip
+#				#	/usr/local/bin/chromedriver
+#
+#	- Your CraigsList login credentials ( email and password ) is required 
+#	  for automated CraigsList management
 #
 #
 # ------------------------------------------
@@ -41,6 +62,13 @@
 #	auto post to Ebay, Amazon, other online classifieds
 #
 #
+# CraigsLists Info
+# ----------------
+#	https://www.craigslist.org/about/terms.of.use
+#	https://www.craigslist.org/about/prohibited
+#
+#	http://www.craigslist.org/about/bulk_posting_interface
+#
 # =========================================================================
 # se.bot is tentatively released under CreativeCommons4.0 by-nc-nd license
 # =========================================================================
@@ -51,6 +79,11 @@
 #		- by	give appropriate credit to 1U Ring LLC
 #		- nc	not for commercial products -- consulting is okay ??
 #		- nd	not for your fork.. lets combine our time, resources, energy, expertise
+#
+#	You agree to imdemnify everybody for your actions and inactions
+#	when you use this ( se.auto-bot.* ) research Proof of Concept software
+#
+#
 #
 # se.bot.auto-post.py	- post all ads listed under Listing directory
 # -------------------
