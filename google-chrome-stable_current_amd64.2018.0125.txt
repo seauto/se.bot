@@ -1,0 +1,146 @@
+#
+#
+# google-chrome-stable_current_amd64.txt 
+#
+#
+# Latest Versions at:
+# ------------------
+#	https://GitHub.com/seauto/se.bot
+#
+#
+# 22-Jan-18 amo Date-of-Birth
+# 25-Jan-18 amo Sanitize
+#
+#
+# find /usr -name chromium-browser
+# --------------------------------
+#	/usr/bin/chromium-browser			# Chromium 61.0.3163.100 Fedora Project
+#	/usr/lib64/chromium-browser/--stuff--		# directory
+#	/usr/lib64/chromium-browser/chromium-browser	# Chromium 61.0.3163.100 Fedora Project
+#
+#	/usr/bin/chromedriver				# ChromeDriver 2.30
+#
+#
+CentOS-7.4# ls -la /usr/bin/chrom*'
+# ================================
+#	#
+#	# move these binaries aside
+#	#
+#	mv /usr/bin/chromedriver	/usr/bin/chromedriver-61 
+#	mv /usr/bin/chromium-browser	/usr/bin/chromium-browser-61 
+#
+#	# watch for conflicts from chromium libraries:
+#	/usr/lib64/chromium-browser
+#
+#
+Cent-7.4# /usr/lib64/chromium-browser/chromium-browser --version
+#	Chromium 61.0.3163.100 Fedora Project
+#
+#
+# cd /usr/local/src/Selenium-Chromium
+# ------------------------------------
+#
+Cent-7.4# firefox https://www.google.com/chrom
+#	#
+#	# download latest browser for linux
+#	#
+#
+Cent-7.4# cd /usr/local/src/Selenium-Chromium
+Cent-7.4# mv ~/Download/google-chrome-stable_current_amd64.deb .
+#
+#
+# ========================
+# Convert *.deb into *.rpm
+# ========================
+Cent-7.4# alien -r --scripts google-chrome-stable_current_amd64.deb 
+#	google-chrome-stable-63.0.3239.132-2.x86_64.rpm generated  
+#	#
+#	# ls -la google-chrome-stable-63.0.3239.132-2.x86_64.rpm
+#	#
+#
+Cent-7.4# rpmrebuild -pe google-chrome-stable-63.0.3239.132-2.x86_64.rpm 
+#	#
+#	# remove references to / and /usr/bin and /opt		# installs into /opt/google ( CentOS-7.4 )
+#	#
+#	transaction check error:
+#	   file /        from install of google-chrome-stable-63.0.3239.132-2.x86_64 conflicts with file from package filesystem-3.2-21.el7.x86_64
+#	   file /usr/bin from install of google-chrome-stable-63.0.3239.132-2.x86_64 conflicts with file from package filesystem-3.2-21.el7.x86_64
+#
+Cent-7.4# yum localinstall  /usr/local/src/Selenium-Chromium/rpmbuild/RPMS/x86_64/google-chrome-stable-63.0.3239.132-2.x86_64.rpm
+#
+#	Loaded plugins: fastestmirror, langpacks
+#	Examining /root/rpmbuild/RPMS/x86_64/google-chrome-stable-63.0.3239.132-2.x86_64.rpm: google-chrome-stable-63.0.3239.132-2.x86_64
+#	Marking /root/rpmbuild/RPMS/x86_64/google-chrome-stable-63.0.3239.132-2.x86_64.rpm to be installed
+#	Resolving Dependencies
+#	--> Running transaction check
+#	---> Package google-chrome-stable.x86_64 0:63.0.3239.132-2 will be installed
+#	--> Finished Dependency Resolution
+#
+#	Dependencies Resolved
+#
+#	===========================================================================================================
+#	Package                       Arch      Version              Repository                                             Size
+#	===========================================================================================================
+#	Installing:
+#	google-chrome-stable          x86_64    63.0.3239.132-2      /google-chrome-stable-63.0.3239.132-2.x86_64          177 M
+#
+#	Transaction Summary
+#	===========================================================================================================
+#	Install  1 Package
+#
+#	Total size: 177 M
+#	Installed size: 177 M
+#	Is this ok [y/d/N]: y
+#	Downloading packages:
+#	Running transaction check
+#	Running transaction test
+#	Transaction test succeeded
+#	Running transaction
+#	  Installing : google-chrome-stable-63.0.3239.132-2.x86_64                                                                        1/1 
+#	warning: %post(google-chrome-stable-63.0.3239.132-2.x86_64) scriptlet failed, exit status 1
+#	Non-fatal POSTIN scriptlet failure in rpm package google-chrome-stable-63.0.3239.132-2.x86_64
+#	  Verifying  : google-chrome-stable-63.0.3239.132-2.x86_64                                                                        1/1 
+#
+#	Installed:
+#	google-chrome-stable.x86_64 0:63.0.3239.132-2                                                                                       
+#
+#	Complete!
+#
+CentOS-7.4# /opt/google/chrome/chrome --version
+#	Google Chrome 63.0.3239.132 unknown
+#
+#
+# ---------------------------------------------------
+# Move old stuff aside, Use new chromium-browser-2.63
+# ---------------------------------------------------
+#	mv /usr/bin/chromedriver	/usr/bin/chromedriver-61 
+#	mv /usr/bin/chromium-browser	/usr/bin/chromium-browser-61 
+#
+Cent-7,4# cd /usr/bin && ln -s ../../opt/google/chrome .
+Cent-7.4# cd /usr/bin && ln -s ./chrome/chromium-browser .	
+#
+#
+Cent-7.4# ln -s ../local/bin/chromedriver .
+#
+#	http://chromedriver.storage.googleapis.com/index.html?path=2.34
+#	http://chromedriver.storage.googleapis.com/index.html?path=2.35
+#	#	unzip chromedriver_linux64.zip
+#	#	cp -p chromedriver_linux64 /usr/local/bin/chromedriver-2.35
+#	#
+#	ls -la /usr/local/bin/chromedriver-2.34
+#	ls -la /usr/local/bin/chromedriver-2.35
+#
+#
+Cent-7.4# /usr/local/bin/chromedriver --version
+#	ChromeDriver 2.35.528139
+#	------------------------
+#
+Cent-7.4# /usr/local/bin/chromium-browser --version
+Cent-7.4# chromium-browser --version
+#	Google Chrome 63.0.3239.132 unknown
+#	----------------
+#
+Cent-7.4# chromium-browser http://google.com
+#
+#
+# End of file
